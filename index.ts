@@ -1,7 +1,7 @@
 // Import stylesheets
 import './style.css';
 
-import './day_01/a';
+import './day_03/b';
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');

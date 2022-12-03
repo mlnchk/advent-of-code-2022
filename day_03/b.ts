@@ -5,9 +5,12 @@ const getCommonItem = (group: string) => {
 
   const [sack1, sack2, sack3] = group.split('\n');
 
+  // console.log(group);
+
   for (const item1 of sack1) {
     for (const item2 of sack2) {
       if (item1 === item2) {
+        // console.log(item1);
         for (const item3 of sack3) {
           if (item2 === item3) {
             return item3;
@@ -47,6 +50,12 @@ const sacks = input.split('\n');
 
 let score = 0;
 
-// for(let i = 0; i += 3)
+for (let i = 0; i < sacks.length; i += 3) {
+  const group = sacks.slice(i, i + 3);
+
+  const commonItem = getCommonItem(group.join('\n'));
+
+  score += getItemPriority(commonItem);
+}
 
 console.log(score);
